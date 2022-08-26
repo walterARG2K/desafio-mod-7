@@ -19,7 +19,7 @@ import {
 import { createReport } from "./controllers/reporter-controller";
 import * as cors from "cors";
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
 app.use(express.json({ limit: "50mb" }));
 app.use(cors());
 
