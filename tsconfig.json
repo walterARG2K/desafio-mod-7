@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "outDir": "backend-dist",
+        "allowJs": true
+    },
+    "include": ["./backend/**/*.ts"]
+}

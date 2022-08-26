@@ -1,0 +1,38 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "license": "MIT",
+  "source": "./frontend/index.html",
+  "scripts": {
+    "dev:back": "nodemon --watch ./backend/index.ts --exec ts-node ./backend/index.ts",
+    "dev:front": "parcel serve",
+    "build:front": "parcel build --dist-dir build",
+    "build:back": "cd backend && tsc",
+    "build": "npm run build:front && npm run build:back",
+    "start": "node ./backend-dist/index.js"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "@vaadin/router": "^1.7.4",
+    "algoliasearch": "^4.14.2",
+    "cloudinary": "^1.30.1",
+    "cors": "^2.8.5",
+    "dropzone": "^6.0.0-beta.2",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mapbox": "^1.0.0-beta10",
+    "mapbox-gl": "^2.10.0",
+    "nodemon": "^2.0.19",
+    "parcel": "^2.7.0",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.3",
+    "sqlite3": "^5.0.11"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "process": "^0.11.10",
+    "querystring-es3": "^0.2.1",
+    "url": "^0.11.0"
+  }
+}
