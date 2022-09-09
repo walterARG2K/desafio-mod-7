@@ -55,17 +55,18 @@ export async function getPetsByLocation(coords) {
 }
 
 export async function updatePet(petId, petInfo) {
+    var petUpdate;
     //squelize(postgreSQL)
     if(petInfo.dataUrl){
     const uploadedImage = await cloudinary.v2.uploader.upload(petInfo.dataUrl);
-    const petUpdate = await Pet.update({...petInfo, urlImage:uploadedImage.url}, {
+    petUpdate = await Pet.update({...petInfo, urlImage:uploadedImage.url}, {
         where: {
             id: petId,
         },
     });
     }else{
     
-    const petUpdate = await Pet.update(petInfo, {
+    petUpdate = await Pet.update(petInfo, {
         where: {
             id: petId,
         },
