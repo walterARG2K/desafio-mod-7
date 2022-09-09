@@ -41,7 +41,7 @@ export async function getPetsByLocation(coords) {
     const { lat, lng } = coords;
     const petsByLocation = await index.search("", {
         aroundLatLng: [lat, lng].join(","),
-        aroundRadius: 10000,
+        aroundRadius: 100000,
     });
     const response: any = [];
     petsByLocation["hits"].forEach((i) => response.push(i.objectID));
